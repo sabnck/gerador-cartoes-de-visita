@@ -1,0 +1,571 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<script>
+(function(){
+  function localeFromCountry(country){
+    country = String(country || "").toUpperCase();
+    if (country === "PT") return "pt-PT";
+    if (country === "BR" || country === "AO" || country === "MZ" || country === "CV" || country === "GW" || country === "ST" || country === "TL") return "pt-BR";
+    if (["ES","MX","AR","CL","CO","PE","UY","PY","BO","EC","VE","CR","PA","GT","HN","SV","NI","DO"].indexOf(country) >= 0) return "es";
+    return "en";
+  }
+  function localeFromBrowser(){
+    var raw = (navigator.language || "").toLowerCase();
+    if (raw === "pt-pt") return "pt-PT";
+    if (raw.indexOf("pt") === 0) return "pt-BR";
+    if (raw.indexOf("es") === 0) return "es";
+    return "en";
+  }
+  var params = new URLSearchParams(location.search);
+  var requested = params.get("lang");
+  if (requested) { localStorage.setItem("se_locale", requested); document.documentElement.lang = requested; return; }
+  var stored = localStorage.getItem("se_locale");
+  if (stored) { document.documentElement.lang = stored; return; }
+  document.documentElement.lang = localeFromBrowser();
+})();
+</script>
+<link rel="alternate" hreflang="pt-BR" href="https://studioelevatio.com/cartoesvisita/?lang=pt-BR">
+<link rel="alternate" hreflang="pt-PT" href="https://studioelevatio.com/cartoesvisita/?lang=pt-PT">
+<link rel="alternate" hreflang="en" href="https://studioelevatio.com/cartoesvisita/?lang=en">
+<link rel="alternate" hreflang="es" href="https://studioelevatio.com/cartoesvisita/?lang=es">
+<link rel="alternate" hreflang="x-default" href="https://studioelevatio.com/cartoesvisita/"><meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Business Card Maker Online | Gerador de Cartões de Visita Profissionais</title>
+  <meta name="description" content="Create professional business cards online with 23 layouts, front and back design, logo positioning, custom background image controls and print-ready high-resolution PDF export." />
+  <meta name="keywords" content="business card maker, business card generator, gerador de cartões de visita, cartão de visita online, tarjeta de visita online, carte de visite en ligne, cartão de visita profissional" />
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+  <meta name="author" content="Studio Elevatio" />
+  <link rel="canonical" href="https://studioelevatio.com/cartoesvisita/" />
+
+
+
+
+
+<meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_PT" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:locale:alternate" content="pt_BR" />
+  <meta property="og:locale:alternate" content="es_ES" />
+  <meta property="og:site_name" content="Studio Elevatio" />
+  <meta property="og:title" content="Business Card Maker Online | Gerador de Cartões de Visita Profissionais" />
+  <meta property="og:description" content="23 professional layouts, front and back design, logo positioning, background image controls and print-ready PDF export." />
+  <meta property="og:url" content="https://studioelevatio.com/cartoesvisita/" />
+  <meta property="og:image" content="https://studioelevatio.com/assets/og-cover.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Business Card Maker Online | Gerador de Cartões de Visita Profissionais" />
+  <meta name="twitter:description" content="23 professional layouts, logo positioning, background image controls and high-resolution PDF export. Business card maker online." />
+  <meta name="twitter:image" content="https://studioelevatio.com/assets/og-cover.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:wght@600;700&family=Inter:wght@500;700;800&family=Lora:wght@600;700&family=Manrope:wght@400;500;600;700;800&family=Montserrat:wght@600;700;800&family=Oswald:wght@600;700&family=Playfair+Display:wght@600;700&family=Poppins:wght@600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./app.css?v=20260602-card-upgrade-7" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Business Card Maker Studio Elevatio",
+    "alternateName": ["Gerador de Cartões de Visita Profissionais", "Business Card Generator Online", "Tarjeta de Visita Online", "Carte de Visite en Ligne"],
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "url": "https://studioelevatio.com/cartoesvisita/",
+    "description": "Professional online business card maker with 23 layouts, front and back design, custom logo upload, background image controls and print-ready high-resolution PDF export.",
+    "featureList": [
+      "23 professional layouts",
+      "Front and back design",
+      "Custom logo upload",
+      "Background image controls",
+      "Local image enhancement",
+      "High-resolution PDF export for print",
+      "Guided prompt to fill details",
+      "Professional print-ready output"
+    ],
+    "inLanguage": ["pt-PT", "pt-BR", "en-US"],
+    "publisher": {
+      "@type": "Organization",
+      "name": "Studio Elevatio",
+      "url": "https://studioelevatio.com/"
+    }
+  }
+  </script>
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <a class="brand-link" href="https://studioelevatio.com/cartoesvisita/" aria-label="Abrir a demonstração original da Studio Elevatio">
+        <span class="brand-mark brand-mark--logo" aria-hidden="true">
+          <svg viewBox="0 0 36 36" fill="none"><path d="M6 26L18 14L30 26" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 19L18 7L30 19" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.55"/></svg>
+        </span>
+        <span class="brand-copy">
+          <strong>Studio Elevatio</strong>
+          <span>Cartões de visita prontos para impressão</span>
+        </span>
+      </a>
+      <div class="topbar-actions">
+        <button type="button" class="ghost-link" id="howToUseBtn">Como usar</button>
+        <a class="ghost-link" href="https://studioelevatio.com/cartoesvisita/">Versão web Studio Elevatio</a>
+      </div>
+    </header>
+
+    <section class="hero-strip">
+      <div class="hero-copy">
+        <span class="eyebrow">Nova aplicação Studio Elevatio</span>
+        <h1>Cria cartões de visita rápidos, bonitos e prontos para impressão.</h1>
+        <p>Carrega o logo, edita os dados na barra lateral, gira o cartão ao clique e navega entre 23 layouts com um fluxo pensado para sair profissional, limpo e pronto a usar.</p>
+      </div>
+      <div class="hero-cards">
+        <article class="mini-stat">
+          <strong>23</strong>
+          <span>layouts com frente e verso</span>
+        </article>
+        <article class="mini-stat">
+          <strong>PDF</strong>
+          <span>alta resolução para impressão</span>
+        </article>
+        <article class="mini-stat">
+          <strong>Prompt</strong>
+          <span>preenchimento guiado e rápido</span>
+        </article>
+      </div>
+    </section>
+
+    <main class="workspace">
+      <aside class="editor-sidebar">
+        <section class="panel panel-tight">
+          <div class="panel-head">
+            <div>
+              <span class="panel-kicker">Identidade</span>
+              <h2>Logo e marca</h2>
+            </div>
+          </div>
+          <label class="dropzone" for="logoInput" id="logoDropzone">
+            <input id="logoInput" class="visually-hidden" type="file" accept="image/*" />
+            <span class="dropzone-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M12 16V5M12 5L7.5 9.5M12 5l4.5 4.5M5 18.5h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </span>
+            <strong>Carregar logo</strong>
+            <span>PNG, SVG ou JPG. Também podes arrastar para aqui.</span>
+          </label>
+          <div class="logo-preview" id="logoPreview">
+            <span>Sem logo carregado</span>
+          </div>
+          <div class="media-controls">
+            <label class="media-controls__check"><span>Mostrar marca</span><input type="checkbox" data-field="logoVisible"></label>
+            <label class="media-controls__check"><span>Texto da marca</span><input type="checkbox" data-field="brandTextVisible"></label>
+            <label class="media-controls__check"><span>Inverter logo</span><input type="checkbox" data-field="logoInvert"></label>
+            <label><span>Texto</span><input type="text" data-field="brandText" maxlength="42"></label>
+            <label><span>Fonte Tt</span><select class="font-select" data-field="brandFont">
+              <option value="Manrope">Manrope</option>
+              <option value="Space Grotesk">Space Grotesk</option>
+              <option value="Inter">Inter</option>
+              <option value="Montserrat">Montserrat</option>
+              <option value="Poppins">Poppins</option>
+              <option value="Playfair Display">Playfair Display</option>
+              <option value="Cormorant Garamond">Cormorant Garamond</option>
+              <option value="Bebas Neue">Bebas Neue</option>
+              <option value="Oswald">Oswald</option>
+              <option value="Lora">Lora</option>
+            </select></label>
+            <label><span>Prévia</span><output class="font-preview" id="brandFontPreview">Studio Elevatio</output></label>
+            <label><span>Tamanho texto</span><input type="range" data-field="brandTextScale" min="60" max="170" step="1"></label>
+            <label class="media-controls__check"><span>Fundo do logo</span><input type="checkbox" data-field="logoFrameVisible"></label>
+            <label><span>Forma</span><select data-field="logoFrameShape"><option value="none">Livre</option><option value="rounded">Arredondada</option><option value="circle">Redonda</option></select></label>
+            <label class="media-controls__color"><span>Cor do fundo</span><input type="color" data-field="logoBackgroundColor"></label>
+            <label><span>Opacidade</span><input type="range" data-field="logoOpacity" min="20" max="100" step="1"></label>
+            <label><span>Escala do logo</span><input type="range" data-field="logoScale" min="40" max="320" step="1"></label>
+            <label><span>Tamanho da área</span><input type="range" data-field="logoBadgeScale" min="55" max="220" step="1"></label>
+            <label><span>Posição X</span><input type="range" data-field="logoX" min="-40" max="40" step="1"></label>
+            <label><span>Posição Y</span><input type="range" data-field="logoY" min="-40" max="40" step="1"></label>
+            <label><span>Respiro</span><input type="range" data-field="logoPadding" min="0" max="40" step="1"></label>
+            <label><span>Cantos</span><input type="range" data-field="logoRadius" min="0" max="60" step="1"></label>
+          </div>
+          <div class="inline-actions inline-actions--stack">
+            <button type="button" class="secondary-btn" id="resetLogoBtn">Reset logo</button>
+            <button type="button" class="secondary-btn" id="clearLogoBtn">Remover logo</button>
+          </div>
+        </section>
+
+        <section class="panel panel-tight">
+          <div class="panel-head">
+            <div>
+              <span class="panel-kicker">Personalização</span>
+              <h2>Imagem de fundo</h2>
+            </div>
+          </div>
+          <label class="dropzone" for="backgroundInput" id="backgroundDropzone">
+            <input id="backgroundInput" class="visually-hidden" type="file" accept="image/*" />
+            <span class="dropzone-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <rect x="4" y="5" width="16" height="14" rx="2.5" stroke="currentColor" stroke-width="1.8"></rect>
+                <circle cx="9" cy="10" r="1.5" fill="currentColor"></circle>
+                <path d="M20 15l-4.4-4.4L7 19" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </span>
+            <strong>Carregar fundo</strong>
+            <span>Imagem opcional para cartões personalizados.</span>
+          </label>
+          <div class="logo-preview background-preview" id="backgroundPreview">
+            <span>Sem fundo carregado</span>
+          </div>
+          <label class="dropzone dropzone-compact" for="railImageInput" id="railImageDropzone">
+            <input id="railImageInput" class="visually-hidden" type="file" accept="image/*" />
+            <span class="dropzone-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <rect x="5" y="4" width="6" height="16" rx="2" stroke="currentColor" stroke-width="1.8"></rect>
+                <path d="M14 7h5M14 12h5M14 17h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
+              </svg>
+            </span>
+            <strong>Imagem da faixa</strong>
+            <span>Aplica imagem só no bloco lateral dos layouts com faixa.</span>
+          </label>
+          <div class="logo-preview background-preview" id="railImagePreview">
+            <span>Sem imagem de faixa</span>
+          </div>
+          <div class="media-controls">
+            <label><span>Opacidade</span><input type="range" data-field="backgroundOpacity" min="0" max="100" step="1"></label>
+            <label><span>Desfoque</span><input type="range" data-field="backgroundBlur" min="0" max="18" step="1"></label>
+            <label><span>Escurecer</span><input type="range" data-field="backgroundDarken" min="0" max="90" step="1"></label>
+            <label><span>Granularidade</span><input type="range" data-field="backgroundGrain" min="0" max="55" step="1"></label>
+            <label><span>Saturação</span><input type="range" data-field="backgroundSaturation" min="40" max="160" step="1"></label>
+            <label><span>Contraste</span><input type="range" data-field="backgroundContrast" min="60" max="160" step="1"></label>
+            <label class="media-controls__color"><span>Cor sobreposta</span><input type="color" data-field="backgroundOverlayColor"></label>
+            <label><span>Opacidade da cor</span><input type="range" data-field="backgroundOverlayOpacity" min="0" max="100" step="1"></label>
+            <label><span>Opacidade faixa</span><input type="range" data-field="railImageOpacity" min="10" max="100" step="1"></label>
+            <label><span>Escurecer faixa</span><input type="range" data-field="railImageDarken" min="0" max="80" step="1"></label>
+          </div>
+          <div class="inline-actions inline-actions--stack">
+            <button type="button" class="secondary-btn" id="enhanceBackgroundBtn">Melhorar definição</button>
+            <button type="button" class="secondary-btn" id="resetBackgroundBtn">Reset e remover fundo</button>
+            <button type="button" class="secondary-btn" id="clearBackgroundBtn">Remover fundo</button>
+            <button type="button" class="secondary-btn" id="clearRailImageBtn">Remover imagem da faixa</button>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-head">
+            <div>
+              <span class="panel-kicker">Informação principal</span>
+              <h2>Quem aparece no cartão</h2>
+            </div>
+          </div>
+          <div class="field-grid field-grid--single">
+            <label class="field">
+              <span>Nome do negócio</span>
+              <input type="text" id="businessName" data-field="businessName" maxlength="60" />
+            </label>
+            <label class="field">
+              <span>Nome da pessoa</span>
+              <input type="text" id="personName" data-field="personName" maxlength="50" />
+            </label>
+            <label class="field">
+              <span>Cargo</span>
+              <input type="text" id="role" data-field="role" maxlength="60" />
+            </label>
+            <label class="field">
+              <span>Slogan / frase principal</span>
+              <input type="text" id="tagline" data-field="tagline" maxlength="100" />
+            </label>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-head">
+            <div>
+              <span class="panel-kicker">Conteúdo</span>
+              <h2>Mensagem e serviços</h2>
+            </div>
+          </div>
+          <div class="field-grid field-grid--single">
+            <label class="field">
+              <span>Descrição curta</span>
+              <textarea id="description" data-field="description" rows="4" maxlength="220"></textarea>
+            </label>
+            <label class="field">
+              <span>Serviço 1</span>
+              <input type="text" data-service-index="0" maxlength="42" />
+            </label>
+            <label class="field">
+              <span>Serviço 2</span>
+              <input type="text" data-service-index="1" maxlength="42" />
+            </label>
+            <label class="field">
+              <span>Serviço 3</span>
+              <input type="text" data-service-index="2" maxlength="42" />
+            </label>
+            <label class="field">
+              <span>Serviço 4</span>
+              <input type="text" data-service-index="3" maxlength="42" />
+            </label>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-head">
+            <div>
+              <span class="panel-kicker">Contactos</span>
+              <h2>Dados que vão aparecer</h2>
+            </div>
+          </div>
+          <div class="field-grid">
+            <label class="field">
+              <span>Telefone</span>
+              <input type="text" id="phone" data-field="phone" maxlength="32" />
+            </label>
+            <label class="field">
+              <span>Email</span>
+              <input type="text" id="email" data-field="email" maxlength="70" />
+            </label>
+            <label class="field">
+              <span>Website</span>
+              <input type="text" id="website" data-field="website" maxlength="80" />
+            </label>
+            <label class="field">
+              <span>Morada</span>
+              <input type="text" id="address" data-field="address" maxlength="80" />
+            </label>
+            <label class="field">
+              <span>Cidade</span>
+              <input type="text" id="city" data-field="city" maxlength="40" />
+            </label>
+            <label class="field">
+              <span>País</span>
+              <input type="text" id="country" data-field="country" maxlength="40" />
+            </label>
+            <label class="field">
+              <span>Instagram</span>
+              <input type="text" id="instagram" data-field="instagram" maxlength="50" />
+            </label>
+            <label class="field">
+              <span>LinkedIn</span>
+              <input type="text" id="linkedin" data-field="linkedin" maxlength="60" />
+            </label>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-head">
+            <div>
+              <span class="panel-kicker">Paleta</span>
+              <h2>Cores do cartão</h2>
+            </div>
+          </div>
+          <div class="field-grid">
+            <label class="field">
+              <span>Cor de destaque</span>
+              <div class="color-field">
+                <input type="color" id="accentColor" data-field="accentColor" />
+                <code id="accentColorValue"></code>
+              </div>
+            </label>
+            <label class="field">
+              <span>Cor base</span>
+              <div class="color-field">
+                <input type="color" id="surfaceColor" data-field="surfaceColor" />
+                <code id="surfaceColorValue"></code>
+              </div>
+            </label>
+            <label class="field">
+              <span>Fundo claro</span>
+              <div class="color-field">
+                <input type="color" id="paperColor" data-field="paperColor" />
+                <code id="paperColorValue"></code>
+              </div>
+            </label>
+            <label class="field">
+              <span>Fundo suave</span>
+              <div class="color-field">
+                <input type="color" id="paperAltColor" data-field="paperAltColor" />
+                <code id="paperAltColorValue"></code>
+              </div>
+            </label>
+            <label class="field">
+              <span>Texto escuro</span>
+              <div class="color-field">
+                <input type="color" id="textDarkColor" data-field="textDarkColor" />
+                <code id="textDarkColorValue"></code>
+              </div>
+            </label>
+            <label class="field">
+              <span>Texto claro</span>
+              <div class="color-field">
+                <input type="color" id="textLightColor" data-field="textLightColor" />
+                <code id="textLightColorValue"></code>
+              </div>
+            </label>
+            <label class="field">
+              <span>Chips</span>
+              <div class="color-field">
+                <input type="color" id="chipColor" data-field="chipColor" />
+                <code id="chipColorValue"></code>
+              </div>
+            </label>
+            <label class="field">
+              <span>Painéis</span>
+              <div class="color-field">
+                <input type="color" id="panelColor" data-field="panelColor" />
+                <code id="panelColorValue"></code>
+              </div>
+            </label>
+          </div>
+          <div class="preset-group">
+            <span class="preset-label">Atalhos de destaque</span>
+            <div class="swatch-row" id="accentPresets"></div>
+          </div>
+          <div class="preset-group">
+            <span class="preset-label">Bases sugeridas</span>
+            <div class="swatch-row" id="surfacePresets"></div>
+          </div>
+          <div class="inline-actions inline-actions--stack palette-actions">
+            <button type="button" class="secondary-btn" id="paletteRandomizeBtn">Aleatorizar paleta inteligente</button>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-head">
+            <div>
+              <span class="panel-kicker">Preenchimento rápido</span>
+              <h2>Prompt para preencher dados</h2>
+            </div>
+          </div>
+          <p class="helper-text">Copia o prompt para uma IA de texto ou usa como guia. O resultado volta em [CARD_PROFILE] para preencher estes campos.</p>
+          <textarea id="assistantPrompt" class="visually-hidden" readonly></textarea>
+          <div class="inline-actions">
+            <button type="button" class="secondary-btn" id="copyPromptBtn">Copiar prompt de dados</button>
+            <button type="button" class="secondary-btn" id="demoDataBtn">Usar exemplo demo</button>
+          </div>
+          <label class="field">
+            <span>Bloco estruturado de dados</span>
+            <textarea id="structuredInput" rows="10" placeholder="[CARD_PROFILE] ... [/CARD_PROFILE]"></textarea>
+          </label>
+          <div class="inline-actions">
+            <button type="button" class="primary-btn" id="applyStructuredBtn">Aplicar ao cartão</button>
+            <button type="button" class="secondary-btn" id="resetStateBtn">Repor dados</button>
+          </div>
+        </section>
+
+      </aside>
+
+      <section class="preview-panel">
+        <div class="preview-toolbar">
+          <div>
+            <span class="panel-kicker">Layout selecionado</span>
+            <h2 id="layoutTitle">Aurora Minimal</h2>
+            <p id="layoutSubtitle">1 de 23 layouts. Cartão profissional com frente e verso.</p>
+          </div>
+          <div class="preview-actions">
+            <button type="button" class="secondary-btn" id="quickCustomBtn">Gerar design</button>
+            <button type="button" class="secondary-btn" id="retryCustomLayoutBtn" hidden>Refazer design</button>
+            <button type="button" class="secondary-btn secondary-btn--danger" id="removeCustomLayoutBtn" hidden>Remover variação</button>
+            <button type="button" class="primary-btn" id="downloadTopBtn">Descarregar</button>
+            <button type="button" class="secondary-btn" id="flipBtn">Virar cartão</button>
+            <button type="button" class="secondary-btn" id="randomizeBtn">Misturar paleta</button>
+          </div>
+        </div>
+
+        <div class="layout-nav">
+          <button type="button" class="nav-arrow" id="prevLayout" aria-label="Layout anterior">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M14.5 6.5L9 12l5.5 5.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </button>
+          <div class="dot-nav" id="layoutDots" aria-label="Selecionar layout"></div>
+          <button type="button" class="nav-arrow" id="nextLayout" aria-label="Layout seguinte">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M9.5 6.5L15 12l-5.5 5.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </button>
+        </div>
+
+        <div class="card-hint">
+          <span id="cardSideLabel">Frente</span>
+          <span>Clica no cartão para virar</span>
+        </div>
+
+        <div class="card-stage">
+          <div class="business-card-shell" id="businessCardShell" tabindex="0" role="button" aria-label="Virar cartão">
+            <div class="business-card" id="businessCard"></div>
+          </div>
+        </div>
+
+        <div class="pricing-grid">
+          <article class="price-card">
+            <span class="price-label">Download individual</span>
+            <strong>Entrega rápida e profissional</strong>
+            <p>Ideal para sair desta página com um cartão pronto para reunião, networking, balcão ou apresentação comercial.</p>
+            <button type="button" class="price-btn" id="buyCurrentBtn">Descarregar layout atual</button>
+          </article>
+          <article class="price-card price-card--featured">
+            <span class="price-label">Coleção completa</span>
+            <strong>Mais opções para vender melhor</strong>
+            <p>Perfeito para comparar estilos, testar abordagens visuais e mostrar alternativas mais valiosas ao cliente.</p>
+            <button type="button" class="price-btn" id="buyAllBtn">Pack completo</button>
+          </article>
+        </div>
+
+        <div class="feedback-bar" id="feedbackBar">Edita os dados, compara os layouts e descarrega quando o cartão estiver perfeito.</div>
+        <div id="checkoutStatus" class="visually-hidden" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <div id="exportSandbox" class="export-sandbox" aria-hidden="true"></div>
+
+    <div class="modal-backdrop guide-backdrop" id="guideModal" hidden>
+      <div class="checkout-modal guide-modal" role="dialog" aria-modal="true" aria-labelledby="guideModalTitle">
+        <button type="button" class="modal-close" id="closeGuideModal" aria-label="Fechar tutorial">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
+          </svg>
+        </button>
+
+        <div class="modal-copy">
+          <span class="panel-kicker" id="guideModalEyebrow">Tutorial rápido</span>
+          <h3 id="guideModalTitle">Como criar o cartão</h3>
+          <p id="guideModalText">Segue estes passos para gerar um cartão profissional em poucos minutos.</p>
+        </div>
+
+        <div class="guide-step-card">
+          <span class="guide-progress" id="guideProgress">1 de 5</span>
+          <h4 id="guideStepTitle">Preenche os dados</h4>
+          <p id="guideStepText">Começa pelo nome do negócio, pessoa, cargo, contactos e serviços. A prévia muda automaticamente.</p>
+        </div>
+
+        <div class="modal-actions">
+          <button type="button" class="secondary-btn" id="prevGuideStepBtn">Anterior</button>
+          <button type="button" class="primary-btn" id="nextGuideStepBtn">Próximo</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-backdrop" id="quickCustomModal" hidden>
+      <div class="checkout-modal quick-custom-modal" role="dialog" aria-modal="true" aria-labelledby="quickCustomTitle">
+        <button type="button" class="modal-close" id="closeQuickCustomModal" aria-label="Fechar janela">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
+          </svg>
+        </button>
+
+        <div class="modal-copy">
+          <span class="panel-kicker">Cartão personalizado</span>
+          <h3 id="quickCustomTitle">Variação local</h3>
+          <p>Este fluxo antigo fica reservado para compatibilidade. O design principal agora é gerado localmente a partir dos campos preenchidos.</p>
+        </div>
+
+        <label class="field">
+          <span>Resposta da IA</span>
+          <textarea id="quickStructuredInput" rows="12" placeholder="[CARD_PROFILE] ... [/CARD_PROFILE]&#10;[CUSTOM_CARD] ... [/CUSTOM_CARD]"></textarea>
+        </label>
+
+        <div class="modal-actions">
+          <button type="button" class="secondary-btn" id="quickCopyPromptBtn">Copiar prompt IA</button>
+          <button type="button" class="secondary-btn" id="quickDemoBtn">Usar demo</button>
+          <button type="button" class="primary-btn" id="quickApplyBtn">Aplicar e continuar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./app.js?v=20260602-card-upgrade-7"></script>
+</body>
+</html>
